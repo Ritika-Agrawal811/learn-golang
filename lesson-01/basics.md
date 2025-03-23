@@ -49,6 +49,72 @@ Programs **must** have a `main` package with a `main()` function. This `main` fu
 
 `fmt` is a _standard_ package included in golang installation. It contains functions for formatting texts, including concatenation and printing to console.
 
+## :sparkles: Printing to Console
+
+#### a) `Print()` function
+prints strings, passed as arguments, _without a newline_
+
+```go
+fmt.Print("Hello")
+fmt.Print("World")
+
+/* 
+  Hello World 
+ */
+```
+
+#### b) `Println()` function
+prints strings, passed as arguments, _with a newline_
+
+```go
+fmt.Println("Hello")
+fmt.Println("World")
+
+/* 
+  Hello
+  World 
+*/
+```
+
+#### c) `Printf()` function
+prints _formatted_ strings according to a **format specifier**, _without a newline_
+
+```go
+fmt.Printf("Hello %s, you are %d years old.", "John", 25)
+
+/* 
+  Hello John, you are 25 years old.
+*/
+```
+
+##### Common format specifiers are :point_down:
+- `%v` : Default format (works with any type)
+- `%T` : Type of the value
+- `%d` : Integer
+- `%s` : String
+- `%f` : Float
+- `%.2f` : Float with 2 decimal places. Any number can be specified.
+- `%t` : Boolean
+- `%p` : Pointer address
+- `%c` : Character
+- `%q` : Quoted string/character
+
+## :sparkles: Concatenating Strings
+
+#### a) `Sprint()` function
+Returns a single string formed by concatenating the string representations of the arguments, _without adding spaces_ between arguments or a _newline_.
+
+```go
+firstName := "John"
+lastName := "Doe"
+
+info := fmt.Sprintf("Name: %s %s, Age: %d", firstName, lastName, 30)
+fmt.Println(info)
+
+/* 
+  Name: John Doe, Age: 30
+ */
+```
 
 
 <p align="center">· · · · · · · · · · · · ·</p>
