@@ -1,24 +1,25 @@
-# Package Declaration
+# Package Declaration 📦
 
 A package is a way to _group together_ related Go source files to organize and structure code. It is made up of _all_ the files in the _same_ directory.
 
-Every `.go` file must start with a package declaration. 
+:warning: **Note:** Every `.go` file must start with a _package declaration_.
 
 ```go
 package main
 ```
 
-## Types of Packages
+## :sparkles: Types of Packages
 
-Go has **two** main types of packages:
+Go has **two** main types of packages ➜
 
-1. `main` Package
-    - The main package is _special_ in Go.
-    - It is the _entry point_ of a Go program.
+### a) `main` package
 
-Programs **must** have a `main` package with a `main()` function. This `main` function is executed first when a go program is run.
+- The main package is _special_ in Go.
+- It is the _entry point_ of a Go program.
 
-Example :
+Programs **must** have a `main` package with a `main()` function. This `main` function is executed _first_ when a go program is run.
+
+##### Example :
 ```go
     package main
 
@@ -28,12 +29,12 @@ Example :
         fmt.Println("Hello, World!")
     }
 ```
+### b) Library Packages
 
-2. Library Packages
-    - These are reusable and do not need a `main()` function.
-    - They are used to share functions, logic etc.
+- These are _reusable_ and do not need a `main()` function.
+- They are used to share functions, logic etc.
 
-Example :
+##### Example :
 ```go
     package utils
 
@@ -42,11 +43,17 @@ Example :
     }
 ```
 
-# `fmt` package
+<p align="center">· · · · · · · · · · · · ·</p>
+
+# `fmt` Package 📦
 
 `fmt` is a _standard_ package included in golang installation. It contains functions for formatting texts, including concatenation and printing to console.
 
-# Use external packages
+
+
+<p align="center">· · · · · · · · · · · · ·</p>
+
+# Use external packages 📦
 
 We can use externals packages in our go code by importing them and calling their functions.
 
