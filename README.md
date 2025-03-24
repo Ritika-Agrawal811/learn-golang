@@ -24,9 +24,23 @@ Note: The convention is to use the _repository name_ for the `go.mod` file in ca
 
 ## :sparkles: Run a golang code
 
-##### Step 1 : In the terminal, navigate to the _folder_ with your golang code.
-##### Step 2 : Enter below command 
+#### Step 1 : Navigate to Your Go Project Folder  
+Open a terminal and move to the directory where your Go project is located:
+
+```shell
+cd /path/to/your/project
+```
+
+#### Step 2 : Run the Go Code
+
+Use the following command to _execute_ your Go program:
+```shell
+go run <path to main package>
+```
+or, if you're already inside the main package directory:
 
 ```shell
 go run .
 ```
+
+This command _compiles_ and runs the Go files without generating a **binary**.
