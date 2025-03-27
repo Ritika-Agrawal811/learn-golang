@@ -57,6 +57,43 @@ func rectangleArea(length, width int) (area int) {
 
 :warning: **Note:** It is always better to mention the returned variables explicitly for verbose. This helps to avoid unnecessary confusion.
 
+## :sparkles: Guard Clause
+An early return from a function using conditionals is called a **guard clause**.
+
+This code :point_down:
+
+```go
+func checkAccess(user string, hasPermission bool) {
+    if user != "" {
+        if hasPermission {
+            fmt.Println("Access granted")
+        } else {
+            fmt.Println("Access denied")
+        }
+    } else {
+        fmt.Println("Invalid user")
+    }
+}
+```
+
+can be simplified as :point_down:
+
+```go
+func checkAccess(user string, hasPermission bool) {
+    if user == "" {
+        fmt.Println("Invalid user")
+        return
+    }
+
+    if !hasPermission {
+        fmt.Println("Access denied")
+        return
+    }
+
+    fmt.Println("Access granted")
+}
+```
+
 <p align="center">· · · · · · · · · · · · ·</p>
 
 # Blank Identifier 🚫

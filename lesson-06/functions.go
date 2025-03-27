@@ -15,6 +15,20 @@ func rectangleArea(length, width int) (area int) {
 	return                // No need to specify `area` explicitly
 }
 
+func checkAccess(user string, hasPermission bool) {
+	if user == "" {
+		fmt.Println("Invalid user")
+		return
+	}
+
+	if !hasPermission {
+		fmt.Println("Access denied")
+		return
+	}
+
+	fmt.Println("Access granted")
+}
+
 func main() {
 	q, r := divide(10, 3)
 	fmt.Println("Quotient:", q, "Remainder:", r)
@@ -24,4 +38,6 @@ func main() {
 	/* ignoring second returned value */
 	q1, _ := divide(18, 3)
 	fmt.Println("Quotient:", q1)
+
+	checkAccess("Ritika", false)
 }
