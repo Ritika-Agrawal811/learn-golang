@@ -87,7 +87,7 @@ fmt.Printf("Hello %s, you are %d years old.", "John", 25)
 */
 ```
 
-##### Common format specifiers are :point_down:
+#### Common format specifiers are :point_down:
 - `%v` : Default format (works with any type)
 - `%T` : Type of the value
 - `%d` : Integer
@@ -101,7 +101,7 @@ fmt.Printf("Hello %s, you are %d years old.", "John", 25)
 
 ## :sparkles: Concatenating Strings
 
-#### a) `Sprint()` function
+### a) `Sprint()` function
 returns a single string formed by concatenating the string representations of the arguments, _without adding spaces_ between arguments or a _newline_.
 
 ```go

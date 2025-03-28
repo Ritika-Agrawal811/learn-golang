@@ -74,7 +74,7 @@ complex numbers with real & imaginary parts
 var c complex64 = 3 + 4i
 ```
 
-#### g) byte
+### g) byte
 Alias for **uint8**, represents _ASCII characters_
 
 ```go
@@ -98,13 +98,14 @@ The _range_ of integer types is determined by the **number of bits** allocated f
 - The formula to calculate the range for a **signed integer type** (intN) is:
 
 $$
-\text{Range} = -2^{N-1} \text{ to } 2^{N-1} - 1
+\large \text{Range} = -2^{N-1} \text{ to } 2^{N-1} - 1
 $$
+
 
 - **Unsigned integers** do not store negative values, so their range is calculated using:
 
 $$
-\text{Range} = 0 \text{ to } 2^N - 1
+\large \text{Range} = 0 \text{ to } 2^N - 1
 $$
 
 We can find the _minimum_ and _maximum_ values of different signed and unsigned integer types using the `math` package :point_down:
