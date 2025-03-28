@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+type Person struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
+
 func main() {
 	/* Boolean */
 	var isReady bool = false
@@ -65,4 +71,9 @@ func main() {
 	fmt.Println("Default int:", defaultInt)
 	fmt.Println("Default float64:", defaultFloat)
 	fmt.Println("Default string:", defaultString)
+
+	/* structs */
+	person := Person{FirstName: "Ritika", LastName: "Agrawal", Age: 23}
+
+	fmt.Printf("person struct is %v", person)
 }

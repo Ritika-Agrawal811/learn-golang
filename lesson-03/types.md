@@ -8,7 +8,7 @@ Go is a _strongly_ and _statically_ typed language.
 ## :sparkles: Basic/Primitive Data types
 Go provides various built-in data types for storing data.
 
-#### a) bool
+### a) bool
 represents `true` or `false` data
 
 ```go
@@ -16,21 +16,21 @@ var isReady bool = true
 hasComplete := false
 ```
 
-#### b) string
+### b) string
 sequence of characters enclosed with _double quotes_
 
 ```go
 var name string = "Ritika"
 language := "Go
 ```
-#### c) int
+### c) int
 a **signed** integer type. It's _size_ depends on the system &mdash; can be _32-bit_ or _64-bit_
 
 ```go
 var age int = 25
 ```
 
-#### d) int8, int16, int32, int64
+### d) int8, int16, int32, int64
 **signed** integers of different sizes
 
 ```go
@@ -47,14 +47,14 @@ var age int = 25
  // Range: -9 quintillion to +9 quintillion
 ```
 
-#### e) uint8, uint16, uint32, uint64
+### e) uint8, uint16, uint32, uint64
 **unsigned** integers of different sizes. They don't include negative numbers.
 
 ```go
 var bigNumber uint64 = 5000
 ```
 
-#### e) float32, float64
+### f) float32, float64
 floating point numbers &mdash; numbers with _decimals_
 
 ```go
@@ -67,7 +67,7 @@ var price float64 = 99.99
 - Precision & accuracy are _too low_ in float8 or float64
 - float32 and float64 cover _most real-world use cases_
 
-#### f) complex64, complex128
+### g) complex64, complex128
 complex numbers with real & imaginary parts
 
 ```go
@@ -81,7 +81,7 @@ Alias for **uint8**, represents _ASCII characters_
 var b byte = 'A'
 ```
 
-#### g) rune
+### h) rune
 Alias for **int32**, represents  _Unicode characters_
 
 ```go
@@ -139,7 +139,39 @@ uint32: 0 to 4294967295
 uint64: 0 to 18446744073709551615
 ```
 
+<p align="center">· · · · · · · · · · · · ·</p>
 
+## :sparkles: Complex/Composite Data types
+Composite data types are _data structures_ that can hold **multiple values**, often of different types. 
 
+### a) Structs
+Structs allows us to _group_ multiple fields of **different types** into a **single entity**.
 
+**Syntax :**
+```go
+type StructName struct {
+    PropertyName type
+    PropertyName type
+    // more such name-type pairs
+}
+```
 
+**Example :**
+```go
+type Person struct {
+    Name string
+    Age  int
+}
+```
+- Here, `Person` is a struct that holds two values &mdash; `Name` and `Age` of types _string_ and _int_ respectively.
+
+To _use_ this struct, we create an instance of it :point_down:
+```go
+p := Person{Name: "Alice", Age: 30}
+```
+
+We can access individual fields using `dot (.)` operator :point_down:
+```go
+ fmt.Println("Name:", p.Name)
+ fmt.Println("Age:", p.Age)
+```

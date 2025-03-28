@@ -103,7 +103,7 @@ Go doesn't allow us to have **unused variables**, which is a good feature becaus
 
 Go provides a **blank identifier ( _ )**. It is a special identifier used to ignore a value.  It acts as a **placeholder** for values we _don’t want_ to use in a program.
 
-#### a) Ignoring Returned Values
+### a) Ignoring Returned Values
 
 A function may return more than one values. We can use `blank identifier (_)` to ignore the ones we don't need.
 
@@ -112,7 +112,7 @@ A function may return more than one values. We can use `blank identifier (_)` to
 ```
 Here we are _ignoring_ the second returned value from `divide` function.
 
-#### b) Ignoring Unused Imports
+### b) Ignoring Unused Imports
 
 Go does not allow unused imports. If we need to import a package only for its _side effects_, we can use `_` to suppress the error.
 

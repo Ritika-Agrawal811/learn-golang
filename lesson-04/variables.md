@@ -4,7 +4,7 @@ Variables in Go store values of _different_ data types. Since Go is **statically
 ## :sparkles: Declaring variables
 Go provides multiple ways to declare a variable
 
-#### a) Using `var` keyword with explicit type
+### a) Using `var` keyword with explicit type
 
 ```go
 var name string = "GoLang"
@@ -15,7 +15,7 @@ var isReady bool = true
 
 - variable type is _explicity_ mentioned. Helpful to use for complex types.
 
-#### b) Using `var` keyword without type
+### b) Using `var` keyword without type
 
 ```go
 var city = "New York" // Go infers type as string
@@ -26,7 +26,7 @@ var count = 100       // Go infers type as int
 
 **Type inference** means that the compiler automatically determines the type of a variable based on its assigned value.
 
-#### c) Short Declaration: Using `walrus` operator
+### c) Short Declaration: Using `walrus` operator
 
 ```go
 age := 23
@@ -35,17 +35,17 @@ age := 23
 - Go _infers_ the type from the assigned value
 - `walrus`operator can be used only inside _functions_.
 
-#### d)  Multiple Variable Declaration 
+### d)  Multiple Variable Declaration 
 Go allows us to declare multiple variables in 2 ways →
 
-##### i) **In single line :**
+#### i) **In single line :**
 
 ```go
 var a, b, c int = 1, 2, 3
 x, y, z := "Go", 3.14, true
 ```
 
-##### ii) **group them using `var (...)` :**
+#### ii) **group them using `var (...)` :**
 
 ```go
 var (
@@ -68,15 +68,15 @@ const Pi = 3.1415
 const AppName = "GoApp"
 ```
 
-#### Multiple Constants Declaration 📜
+### Multiple Constants Declaration 📜
 
-##### i) **In single line :**
+#### i) **In single line :**
 
 ```go
 const Pi, Language, Version = 3.1415, "Go", 1.21
 ```
 
-##### ii) **group them using `const (...)` :**
+#### ii) **group them using `const (...)` :**
 
 ```go
 const (
@@ -98,4 +98,3 @@ const fullname = firstname + " " + lastname
 
 - Computed constants can **only** be computed using other `const` variables or constants.
 
-<p align="center">· · · · · · · · · · · · ·</p>
