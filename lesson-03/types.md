@@ -176,3 +176,27 @@ We can access individual fields using `dot (.)` operator :point_down:
  fmt.Println("Name:", p.Name)
  fmt.Println("Age:", p.Age)
 ```
+
+### a) Interfaces
+An _interface_ in Go is a **composite data type** that can hold values of _different types_ as long as those types implement the interface.
+
+**Syntax :**
+
+```go
+var variableName interfaceName 
+```
+
+**Example :**
+
+```go
+ var i interface{} // Empty interface can hold any type
+
+ i = 42 // Assign an integer value
+ fmt.Println(i) // Prints: 42
+
+ i = "Hello" // Assign a string value
+ fmt.Println(i) // Prints: Hello
+```
+
+-  Here, `i` holds an _integer_ first and then a _string_.
+- The _type_ stored inside `i` changes **dynamically**, but `i` is still an interface{}.

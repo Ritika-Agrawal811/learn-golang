@@ -76,4 +76,13 @@ func main() {
 	person := Person{FirstName: "Ritika", LastName: "Agrawal", Age: 23}
 
 	fmt.Printf("person struct is %v", person)
+
+	/* interfaces */
+	var i interface{} // Empty interface can hold any type
+
+	i = 42 // Assign an integer value
+	fmt.Println(i)
+
+	i = "Hello" // Assign a string value
+	fmt.Println(i)
 }

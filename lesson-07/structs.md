@@ -178,3 +178,57 @@ In Go, composition is _preferred_ over inheritance, meaning that instead of defi
 ✅ Encourages reusability and modularity.
 ✅ Avoids deep hierarchies and tight coupling.
 ✅ Promotes cleaner, more maintainable code.
+
+<p align="center">· · · · · · · · · · · · ·</p>
+
+# Pointer vs. Value Receiver in Methods
+The _receivers_ defined in the struct methods can be of **two types** &mdash; _Pointer_ and _Value_
+
+## :sparkles: Pointer Receiver
+A pointer receiver `(*Type)` in a method allows the function to _modify_ the struct's fields and _avoid_ unnecessary copying of large structs.
+
+```go
+type File struct {
+    content string
+}
+
+func (f *File) Write(data string) {
+    f.content = data
+}
+
+func (f *File) Read() string {
+    return f.content
+}
+```
+
+- Here, both methods `Writer` and `Read` use _pointer receiver_.
+
+## :sparkles: Value Receiver
+A _value receiver_ `(Type)` means the method gets a **copy of the struct** instead of modifying the original instance.
+
+```go
+type Point struct {
+    x, y int
+}
+
+func (p Point) Display() {
+    fmt.Println("Coordinates:", p.x, p.y)
+}
+```
+- Here, we use a value receiver for method `Display`.
+
+## :sparkles: When to use which?
+
+| **When to Use**                                      | **Pointer Receiver (`*Type`)** | **Value Receiver (`Type`)** |
+|------------------------------------------------------|----------------------------------|------------------------------|
+| Modifies struct fields?                         | ✅ Yes                           | ❌ No                         |
+| Struct is large?                                 | ✅ Yes                           | ❌ No                         |
+| Implements an interface requiring pointer methods? | ✅ Yes                           | ❌ No                         |
+| Method only reads data?                          | ❌ No                            | ✅ Yes                         |
+| Struct is small?                                 | ❌ No                            | ✅ Yes                         |
+
+
+### 🔑 Quick Rule of Thumb
+
+- Use **pointer** receiver when _modifying_ data or for large structs.
+- Use **value** receiver when the method **only reads** data and doesn’t need to _modify_ the struct.
