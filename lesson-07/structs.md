@@ -168,7 +168,7 @@ We can _call_ a method defined for a struct by using its _instance_.
 
 <p align="center">· · · · · · · · · · · · ·</p>
 
-# Composition
+# Composition 🧱 
 Composition is a **design principle** where _smaller_, _reusable components_ are combined to build complex systems.
 
 In Go, composition is _preferred_ over inheritance, meaning that instead of defining a _hierarchy_ (like in object-oriented languages), we build complex types by **combining** multiple independent components.
@@ -181,7 +181,7 @@ In Go, composition is _preferred_ over inheritance, meaning that instead of defi
 
 <p align="center">· · · · · · · · · · · · ·</p>
 
-# Pointer vs. Value Receiver in Methods
+# Pointer vs. Value Receiver in Methods ⚙️
 The _receivers_ defined in the struct methods can be of **two types** &mdash; _Pointer_ and _Value_
 
 ## :sparkles: Pointer Receiver
@@ -232,3 +232,93 @@ func (p Point) Display() {
 
 - Use **pointer** receiver when _modifying_ data or for large structs.
 - Use **value** receiver when the method **only reads** data and doesn’t need to _modify_ the struct.
+
+<p align="center">· · · · · · · · · · · · ·</p>
+
+# JSON Struct Tags 🧬 
+In Go, struct tags are **metadata** attached to struct fields. When working with JSON, these tags tell the `encoding/json` package how to _encode_ (marshal) and _decode_ (unmarshal) data.
+
+### Syntax :
+```go
+FieldName Type `json:"jsonKeyName,option1,option2,..."`
+```
+- **jsonKeyName :** name to use in the JSON output/input
+- **Options like :**
+    - **omitempty :** omit the field if it's empty/zero.
+    - **dash(-) :** exclude the field from JSON entirely.
+
+### Example :
+```go
+type Person struct {
+    Name string `json:"name"`
+}
+```
+- Here, `json:"name"` tells the **JSON encoder/decoder** to map the Go `Name` field to/from a JSON field called `name`.
+
+When we marshal this `Person` struct, we get:
+```json
+{"name": "Sara"}
+```
+
+## :sparkles: JSON Struct Tag Options
+
+### a) omitempty
+Omits the field if it has the _zero value_ for its **type**.
+
+| Type     | Zero Value |
+|----------|------------|
+| `string` | `""`       |
+| `int`    | `0`        |
+| `float`  | `0.0`      |
+| `bool`   | `false`    |
+| `slice`  | `nil`      |
+| `map`    | `nil`      |
+| `pointer`| `nil`      |
+
+#### Example :
+
+```go
+type Movie struct {
+    Title string `json:"title,omitempty"`
+    Year  int    `json:"year,omitempty"`
+}
+```
+Suppose `Year` is 0, then output becomes :
+```json
+{"title": "Inception"}
+```
+#### 🧩 Special Considerations with `omitempty` and Structs
+**omitempty** works as expected for most types — but **not** plain structs.
+
+Suppose we have :
+```go
+type Response struct {
+    Data Movie `json:"data,omitempty"`
+}
+```
+
+Where `Movie` is a struct type as :
+```go
+type Movie struct {
+    Title string `json:"title,omitempty"`
+    Year  int    `json:"year,omitempty"`
+}
+```
+
+If Data is **empty (Movie{})**, it will still be _included_ in the output as :
+```json
+{
+    "data": {
+        "title": "",
+        "year": 0
+    }
+}
+```
+
+To solve this, we can use a **pointer** :
+```go
+type Response struct {
+    Data *Movie `json:"data,omitempty"`
+}
+```
+Here we can mention Data as `nil` and it will be entirely omitted by `encoding/json` package.
