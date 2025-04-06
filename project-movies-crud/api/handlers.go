@@ -87,7 +87,7 @@ func (h *Handler) creatMovieHandler(w http.ResponseWriter, r *http.Request) {
 
 	response := entities.SuccessResponse{
 		Status: true,
-		Data:   movie,
+		Data:   &movie,
 	}
 
 	json.NewEncoder(w).Encode(response)
@@ -120,7 +120,7 @@ func (h *Handler) updateMovieHandler(w http.ResponseWriter, r *http.Request) {
 
 	response := entities.SuccessResponse{
 		Status: true,
-		Data:   movie,
+		Data:   &movie,
 	}
 
 	json.NewEncoder(w).Encode(response)
@@ -146,6 +146,7 @@ func (h *Handler) deleteMovieHandler(w http.ResponseWriter, r *http.Request) {
 
 	response := entities.SuccessResponse{
 		Status: true,
+		Data:   nil,
 	}
 
 	json.NewEncoder(w).Encode(response)

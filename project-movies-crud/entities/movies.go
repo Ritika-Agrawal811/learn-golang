@@ -1,8 +1,8 @@
 package entities
 
 type SuccessResponse struct {
-	Status bool  `json:"status"`
-	Data   Movie `json:"data,omitempty"`
+	Status bool   `json:"status"`
+	Data   *Movie `json:"data,omitempty"`
 }
 
 type MovieList struct {
