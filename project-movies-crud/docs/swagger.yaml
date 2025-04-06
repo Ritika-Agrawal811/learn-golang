@@ -1,0 +1,177 @@
+basePath: /api/v1
+definitions:
+  entities.Director:
+    properties:
+      firstname:
+        type: string
+      lastname:
+        type: string
+    type: object
+  entities.Movie:
+    properties:
+      director:
+        $ref: '#/definitions/entities.Director'
+      id:
+        type: string
+      isbn:
+        type: string
+      title:
+        type: string
+    type: object
+  entities.SuccessResponse:
+    properties:
+      data:
+        $ref: '#/definitions/entities.Movie'
+      status:
+        type: boolean
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample server for movies.
+  title: Movie API
+  version: "1.0"
+paths:
+  /movies:
+    get:
+      description: Retrieves a list of all movies from the database
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entities.Movie'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get all movies
+      tags:
+      - movies
+    post:
+      consumes:
+      - application/json
+      description: Adds a new movie to the database
+      parameters:
+      - description: Movie object to create
+        in: body
+        name: movie
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Movie'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/entities.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Create a new movie
+      tags:
+      - movies
+  /movies/{id}:
+    delete:
+      description: Delete a movie by ID
+      parameters:
+      - description: Movie ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entities.SuccessResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Delete a movie
+      tags:
+      - movies
+    get:
+      description: Retrieves a single movie by its ID
+      parameters:
+      - description: Movie ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entities.Movie'
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get movie by ID
+      tags:
+      - movies
+    put:
+      consumes:
+      - application/json
+      description: Updates an existing movie's details
+      parameters:
+      - description: Movie object to update
+        in: body
+        name: movie
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Movie'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entities.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Update a movie
+      tags:
+      - movies
+swagger: "2.0"
