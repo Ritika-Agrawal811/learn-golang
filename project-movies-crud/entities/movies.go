@@ -10,7 +10,7 @@ type MovieList struct {
 }
 
 type Movie struct {
-	Id       string    `json:"id"`
+	Id       string    `json:"id,omitempty"`
 	Isbn     string    `json:"isbn"`
 	Title    string    `json:"title"`
 	Director *Director `json:"director"`

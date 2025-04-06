@@ -113,7 +113,8 @@ func (h *Handler) updateMovieHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := h.service.UpdateMovie(movie); err != nil {
+	params := mux.Vars(r)
+	if err := h.service.UpdateMovie(params["id"], movie); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}

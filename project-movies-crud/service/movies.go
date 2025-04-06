@@ -11,7 +11,7 @@ type MoviesService interface {
 	GetAllMovies() (entities.MovieList, error)
 	GetMovieById(id string) (entities.Movie, error)
 	DeleteMovieById(id string) error
-	UpdateMovie(movie entities.Movie) error
+	UpdateMovie(id string, movie entities.Movie) error
 	CreateMovie(movie entities.Movie) error
 }
 
@@ -71,15 +71,21 @@ func (s *moviesService) DeleteMovieById(id string) error {
 	return nil
 }
 
-func (s *moviesService) UpdateMovie(movie entities.Movie) error {
+func (s *moviesService) UpdateMovie(id string, movie entities.Movie) error {
 	moviesList, err := s.GetAllMovies()
 	if err != nil {
 		return err
 	}
 
 	for index, item := range moviesList.Movies {
-		if item.Id == movie.Id {
-			moviesList.Movies[index] = movie
+		if item.Id == id {
+			updatedMovie := entities.Movie{
+				Id:       id,
+				Isbn:     movie.Isbn,
+				Title:    movie.Title,
+				Director: movie.Director,
+			}
+			moviesList.Movies[index] = updatedMovie
 		}
 	}
 
