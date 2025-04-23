@@ -1,11 +1,11 @@
-package main
+package miscellaneous
 
 import (
 	"fmt"
 	"strconv"
 )
 
-func isPalindrome(x int) bool {
+func IsPalindrome(x int) bool {
 	if x < 0 {
 		return false
 	}
@@ -24,7 +24,7 @@ func isPalindrome(x int) bool {
 }
 
 // this function checks for palindrome without converting the number to string */
-func checkPalindromeWithoutConvertingToString(x int) bool {
+func CheckPalindromeWithoutConvertingToString(x int) bool {
 	if x < 0 || (x%10 == 0 && x != 0) {
 		return false
 	}
@@ -38,17 +38,15 @@ func checkPalindromeWithoutConvertingToString(x int) bool {
 	return x == reversed || x == reversed/10
 }
 
-func main() {
-
+func RunPalinromeCheckTest() {
 	testCases := []int{121, -121, 10, 444, 5034, 56765}
 
 	for _, num := range testCases {
-		result := isPalindrome(num)
+		result := IsPalindrome(num)
 		fmt.Println(result)
 
-		response := checkPalindromeWithoutConvertingToString(num)
+		response := CheckPalindromeWithoutConvertingToString(num)
 		fmt.Printf("checking without converting to string: %v\n", response)
 
 	}
-
 }

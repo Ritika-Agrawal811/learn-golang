@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/learn-golang/project-movies-crud/api"
+	"github.com/Ritika-Agrawal811/learn-golang/project-movies-crud/api"
 )
 
 // @title Movie API
@@ -20,7 +20,6 @@ func main() {
 
 	/* pass the custom router to http.ListenAndServe method */
 	if err := http.ListenAndServe(":8000", router); err != nil {
-		fmt.Println("failed")
 		log.Fatal(err)
 	}
 

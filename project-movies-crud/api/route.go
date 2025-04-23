@@ -1,9 +1,9 @@
 package api
 
 import (
+	_ "github.com/Ritika-Agrawal811/learn-golang/project-movies-crud/docs"
+	"github.com/Ritika-Agrawal811/learn-golang/project-movies-crud/service"
 	"github.com/gorilla/mux"
-	_ "github.com/learn-golang/project-movies-crud/docs"
-	"github.com/learn-golang/project-movies-crud/service"
 	httpSwagger "github.com/swaggo/http-swagger"
 )
 

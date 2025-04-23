@@ -10,7 +10,7 @@
 - It includes **garbage collection** that is designed to be efficient with low pause times.
 
 ## :sparkles: go.mod file
-In a React project, we download packages via _npm_ and import them in the components. Those downloaded packages are stored in `node_modules`.
+In a React project, we download packages via _npm_ and import them in the components. Those downloaded packages are stored in `node_modules` and maintained in `package.json`.
 
 Similarly, in a Golang project, when we _import_ packages contained in other modules, we need to manage them in a separate file called `go.mod`. It is a **module file** for our own project.
 

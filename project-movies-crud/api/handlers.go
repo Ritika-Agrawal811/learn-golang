@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/Ritika-Agrawal811/learn-golang/project-movies-crud/entities"
+	"github.com/Ritika-Agrawal811/learn-golang/project-movies-crud/service"
 	"github.com/gorilla/mux"
-	"github.com/learn-golang/project-movies-crud/entities"
-	"github.com/learn-golang/project-movies-crud/service"
 )
 
 type Handler struct {

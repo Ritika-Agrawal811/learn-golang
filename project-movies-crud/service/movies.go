@@ -3,8 +3,8 @@ package service
 import (
 	"fmt"
 
-	"github.com/learn-golang/project-movies-crud/entities"
-	"github.com/learn-golang/project-movies-crud/utils"
+	"github.com/Ritika-Agrawal811/learn-golang/project-movies-crud/entities"
+	"github.com/Ritika-Agrawal811/learn-golang/project-movies-crud/utils"
 )
 
 type MoviesService interface {
