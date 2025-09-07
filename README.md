@@ -1,8 +1,8 @@
 # Welcome to learn-golang :yellow_heart:
 
-This repository is where I document my journey of learning Go (Golang) — from the basics to building real projects!
+This repository is where I document my journey of learning Go (Golang) — from basics to building real projects!
 
-I’ll be sharing notes, code snippets, and examples along the way so that others starting out can also learn with me. 🚀
+I’ll be sharing notes, examples,  practice questions and small projects along the way so that others starting out can also learn with me! 🚀
 
 ## 📂 Repository Structure
 The project is organized into folders by **lessons**, so each topic stays separate and easy to follow :
@@ -20,5 +20,13 @@ The project is organized into folders by **lessons**, so each topic stays separa
 - A `.go` file → runnable code for that lesson
 - Notes to explain the concept
 
+## 🤝 Contributions & Feedback
 
+If you spot mistakes, have suggestions, or want to add examples, feel free to open an issue or PR. Learning is better when shared! 💬
+
+## 🙋‍♂️ Support
+
+Give a ⭐ if you like this repo, and share it with your friends!
+
+**Happy Learning!** :sparkles:
 
