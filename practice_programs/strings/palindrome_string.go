@@ -11,6 +11,8 @@ every += is a new allocation, and that can get expensive in loops.
 
 This is okay for numbers as Integers in Go are mutable primitives, so updating
 reversed doesn’t allocate memory repeatedly — it's fast and cheap.
+
+Time complexity is O(n²) because of repeated string concatenation
 */
 func IsPalindrome(str string) bool {
 

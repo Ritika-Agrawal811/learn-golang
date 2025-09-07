@@ -9,7 +9,7 @@ These are conditional statements to _control_ program flow based on **conditions
 - `else if` – checks multiple conditions if previous ones fail
 - `else` – runs if no previous conditions are met
 
-:warning: **Note:** These statements, unlike some languages, do not use **parentheses**.
+:warning: **Note:** These statements, unlike some languages, do not use **parentheses** in Go.
 
 ```go
 if score >= 90 {

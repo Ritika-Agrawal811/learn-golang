@@ -40,4 +40,13 @@ func main() {
 	/* check a palindrome string */
 	strings.RunPalindromeStringTest()
 
+	/* count vowels and consonants */
+	strings.RunCountVowelsAndConsonantsTest()
+
+	/* find most frequent character */
+	strings.RunFindFrequentCharacterTest()
+
+	/* reverse a string */
+	strings.RunReverseStringTest()
+
 }

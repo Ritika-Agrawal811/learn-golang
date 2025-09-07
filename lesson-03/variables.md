@@ -86,7 +86,7 @@ const (
 )
 ```
 
-- Constants can only be simple _primitve types_ &mdash: integers, boolean, strings and floats. They **can not** be slices, maps and structs.
+- Constants can only be simple _primitve types_ &mdash; integers, boolean, strings and floats. They **can not** be slices, maps and structs.
 
 - Constants must be known at compile time. So they usually have static values. Go allows **computed constants** as long as it can be computed at _compile time_.
 

@@ -101,7 +101,7 @@ fmt.Printf("Hello %s, you are %d years old.", "John", 25)
 
 ## :sparkles: Concatenating Strings
 
-### a) `Sprint()` function
+### a) `Sprintf()` function
 returns a single string formed by concatenating the string representations of the arguments, _without adding spaces_ between arguments or a _newline_.
 
 ```go

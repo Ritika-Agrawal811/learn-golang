@@ -1,46 +1,24 @@
-# learn-golang
+# Welcome to learn-golang :yellow_heart:
 
-## :sparkles: Why learn Go?
-- Go is a _compiled_ language. It has _greater_ **execution speed** as compared to interpreted languages like JavaScript, PHP, Python and Ruby.
+This repository is where I document my journey of learning Go (Golang) — from the basics to building real projects!
 
-- In comparison to other compiled languages like C/C++, Java, Rust and C#, Go has _greater_ **compilation  speed**.
+I’ll be sharing notes, code snippets, and examples along the way so that others starting out can also learn with me. 🚀
 
-- Go is _lightweight_, it has a small **runtime** compared to Java and does not require a Virtual Machine to run.
+## 📂 Repository Structure
+The project is organized into folders by **lessons**, so each topic stays separate and easy to follow :
 
-- It includes **garbage collection** that is designed to be efficient with low pause times.
+| Lesson    | Topic              | Description                                    |
+| --------- | ------------------ | ---------------------------------------------- |
+| lesson-00 | Hello World        | Writing your first Go program                  |
+| lesson-01 | Intro to Packages        | Different types of packages and how they are used.                  |
+| lesson-02 | Types  | Primitive and Composite Data Types |
+| lesson-03 | Variables          | Declaring variables and constants                 |
+| lesson-04 | Conditionals | `if-else` and `switch` statements           |
+| lesson-05 | Loops | `if`, `for`, and `switch` statements |
 
-## :sparkles: go.mod file
-In a React project, we download packages via _npm_ and import them in the components. Those downloaded packages are stored in `node_modules` and maintained in `package.json`.
+👉 Each lesson folder contains :
+- A `.go` file → runnable code for that lesson
+- Notes to explain the concept
 
-Similarly, in a Golang project, when we _import_ packages contained in other modules, we need to manage them in a separate file called `go.mod`. It is a **module file** for our own project.
 
-#### Create a go.mod file 
 
-```bash
-go mod init <file_name>
-```
-
-Note: The convention is to use the _repository name_ for the `go.mod` file in case you plan to publish your module for others to use. This helps _Go tools_ to easily track and download your module.
-
-## :sparkles: Run a golang code
-
-#### Step 1 : Navigate to Your Go Project Folder  
-Open a terminal and move to the directory where your Go project is located:
-
-```shell
-cd /path/to/your/project
-```
-
-#### Step 2 : Run the Go Code
-
-Use the following command to _execute_ your Go program:
-```shell
-go run <path to main package>
-```
-or, if you're already inside the main package directory:
-
-```shell
-go run .
-```
-
-This command _compiles_ and runs the Go files without generating a **binary**.

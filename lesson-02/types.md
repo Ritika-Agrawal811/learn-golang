@@ -63,8 +63,8 @@ var price float64 = 99.99
 
 ##### :thought_balloon: Why no `float8` or `float16`?
 - Go follows the **IEEE 754 floating-point standard**, which defines only 32-bit and 64-bit floating points
-- Most CPUs lack native float8 or float64 _support_
-- Precision & accuracy are _too low_ in float8 or float64
+- Most CPUs lack native float8 or float16 _support_
+- Precision & accuracy are _too low_ in float8 or float16
 - float32 and float64 cover _most real-world use cases_
 
 ### g) complex64, complex128
@@ -177,7 +177,7 @@ We can access individual fields using `dot (.)` operator :point_down:
  fmt.Println("Age:", p.Age)
 ```
 
-### a) Interfaces
+### b) Interfaces
 An _interface_ in Go is a **composite data type** that can hold values of _different types_ as long as those types implement the interface.
 
 **Syntax :**
