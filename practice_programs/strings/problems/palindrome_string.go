@@ -1,4 +1,4 @@
-package strings
+package problems
 
 import "fmt"
 
@@ -13,6 +13,7 @@ This is okay for numbers as Integers in Go are mutable primitives, so updating
 reversed doesn’t allocate memory repeatedly — it's fast and cheap.
 
 Time complexity is O(n²) because of repeated string concatenation
+Space complexity is O(n) (because reversed string is length n)
 */
 func IsPalindrome(str string) bool {
 

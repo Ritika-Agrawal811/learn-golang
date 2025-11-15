@@ -21,7 +21,7 @@ Similarly, in a Golang project, when we _import_ packages contained in other mod
 ➡️ **To create a go.mod file, use command :**
 
 ```bash
-go mod init <file_name>
+go mod init <project_name>
 ```
 
 Note: The convention is to use the _repository name_ for the `go.mod` file in case you plan to publish your module for others to use. This helps _Go tools_ to easily track and download your module.

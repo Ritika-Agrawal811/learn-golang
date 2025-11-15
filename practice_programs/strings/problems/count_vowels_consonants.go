@@ -1,4 +1,4 @@
-package strings
+package problems
 
 import (
 	"fmt"
@@ -37,8 +37,7 @@ func CountVowelsAndConsonants(str string) {
 
 /*
 reduce space from creating a lower case copy by converting each rune to lowercase in the loop
-
-	Space complexity reduces to O(1)
+Space complexity reduces to O(1)
 */
 func OptimizedCount(str string) {
 	vowels := map[rune]bool{

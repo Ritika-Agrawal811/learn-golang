@@ -1,11 +1,10 @@
-package strings
+package problems
 
 import "fmt"
 
 /*
 Time Complexity is ---> O(n)
-
-	Space Complexity is ---> O(k) where k is the no of unique letters
+Space Complexity is ---> O(k) where k is the no of unique letters
 */
 func FindFrequentCharacter(str string) string {
 	letters := make(map[rune]int)
@@ -17,8 +16,6 @@ func FindFrequentCharacter(str string) string {
 			letters[char] = 1
 		}
 	}
-
-	fmt.Println(letters)
 
 	count := 0
 	var freqChar rune

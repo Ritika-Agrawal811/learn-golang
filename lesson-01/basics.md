@@ -10,7 +10,7 @@ package main
 
 ## :sparkles: Types of Packages
 
-Go has **two** main types of packages ➜
+Go has **two** types of packages ➜
 
 ### a) `main` package
 
@@ -29,7 +29,7 @@ Programs **must** have a `main` package with a `main()` function. This `main` fu
         fmt.Println("Hello, World!")
     }
 ```
-### b) Library Packages
+### b) Library Packages (Importable package)
 
 - These are _reusable_ and do not need a `main()` function.
 - They are used to share functions, logic etc.
@@ -43,6 +43,19 @@ Programs **must** have a `main` package with a `main()` function. This `main` fu
     }
 ```
 
+### c) CLI Tool (Executable Package)
+- These are also reusable packages but contain a main() function and use package main.
+- They are designed to be run from the terminal, not imported into the Go code.
+- Used for tasks like code generation, formatting, migrations, hot-reloading, etc. 
+
+##### Examples :
+
+- `github.com/cosmtrek/air` → hot reloader
+- `golang.org/x/tools/cmd/goimports` → formatter
+- `github.com/swaggo/swag/cmd/swag` → swagger tool
+- `github.com/pressly/goose/cmd/goose` → migration tool
+
+
 <p align="center">· · · · · · · · · · · · ·</p>
 
 # `fmt` Package 📦
@@ -52,7 +65,7 @@ Programs **must** have a `main` package with a `main()` function. This `main` fu
 ## :sparkles: Printing to Console
 
 #### a) `Print()` function
-prints strings, passed as arguments, _without a newline_
+prints strings passed as arguments _without a newline_
 
 ```go
 fmt.Print("Hello")
@@ -64,7 +77,7 @@ fmt.Print("World")
 ```
 
 #### b) `Println()` function
-prints strings, passed as arguments, _with a newline_
+prints strings passed as arguments _with a newline_
 
 ```go
 fmt.Println("Hello")
@@ -123,9 +136,13 @@ fmt.Println(info)
 
 We can use externals packages in our go code by importing them and calling their functions.
 
-**Step 1 :**  Visit [pkg.go.dev](https://pkg.go.dev/)
-**Step 2 :**  Locate any package you wish to use. In the _Documentation_ section, you can view a package's functions
-**Step 3 :** From the top of the page, copy the package name and import it in your code. 
+**Step 1 :**  Visit [pkg.go.dev](https://pkg.go.dev/).
+**Step 2 :**  Locate any package you wish to use. In the _Documentation_ section, you can view a package's functions.
+**Step 3 :** Identify the type of package and follow accordingly.
+
+## Importing Library Packages
+
+**Step 4 :** From the top of the page, copy the package name and import it in your code. 
 
 Example : 
 
@@ -149,9 +166,9 @@ func main() {
 ```
 Here, `quotes` is an alias for the imported package. We can call it anything, but it _defaults_ to the base package name (quote) if not explicitly defined.
 
-**Step 4 :** Add new module requirements and sums
+**Step 5 :** Add new module requirements and sums
 
-When we include a third-party package, we need to run `go mod tidy` to -:
+When we include a third-party package, we need to run `go mod tidy` to :-
 
 - Ensure that the `go.mod` file reflects the correct dependencies used in our project.
 
@@ -163,7 +180,7 @@ When we include a third-party package, we need to run `go mod tidy` to -:
 
 This command acts as a _cleanup_ tool for Go modules.
 
-```shell
+```bash
 $ go mod tidy
 go: finding module for package rsc.io/quote/v4
 go: downloading rsc.io/quote v1.5.2
@@ -171,4 +188,14 @@ go: downloading rsc.io/quote/v4 v4.0.1
 go: found rsc.io/quote/v4 in rsc.io/quote/v4 v4.0.1
 go: downloading rsc.io/sampler v1.3.0
 go: downloading golang.org/x/text v0.0.0-20170915032832
+```
+
+## Installing Executable Packages
+
+**Step 4 :** Install the package
+
+Executable packages have a main() function and builds into an executable library, hence these must be installed using :
+
+```bash
+go install <module>@latest
 ```
