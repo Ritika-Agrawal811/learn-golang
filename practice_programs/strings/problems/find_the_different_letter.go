@@ -4,7 +4,7 @@ import "fmt"
 
 /*
 Time complexity -> O(n)
-Space complexity -> O(n)
+Space complexity -> O(1) [ only 26 letters in alphabet ]
 */
 func FindTheDifferentLetter(s string, t string) byte {
 	letters := make(map[rune]int)
