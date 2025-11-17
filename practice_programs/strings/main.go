@@ -49,4 +49,22 @@ func main() {
 	/* check valid word */
 	problems.RunCheckValidWordTest()
 
+	/* convert excel column to number */
+	problems.RunFindExcelColumnTest()
+
+	/* find frequent non banned word */
+	problems.RunFindFrequentWordTest()
+
+	/* find the positions of groups in a string */
+	problems.RunFindLargeGroupsTest()
+
+	/*  check if a word is subsequence of a string */
+	problems.RunIsSubsequenceTest()
+
+	/* capitalize the title */
+	problems.RunCapitalizeTheTitleTest()
+
+	/* find gcd of 2 strings */
+	problems.RunGcdOfStringsTest()
+
 }
